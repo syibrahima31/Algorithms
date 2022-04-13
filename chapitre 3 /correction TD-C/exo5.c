@@ -20,5 +20,14 @@ int main()
     {
         printf("Vous etes admis"); 
     }
+
+
+    typedef struct Point 
+    {
+        int x ; 
+        int y ; 
+        
+    };
+    
     
 }
