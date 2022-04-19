@@ -1,44 +1,64 @@
-#include <stdio.h> 
+/*
+    nom : SY 
+    prenom : Ibrahima 
+    email : syibrahima31@gmail.com 
+    tel : 77313-00-67
+*/
 
+#include <stdio.h> 
+#include <stdlib.h> 
+#include  <assert.h> 
+int somme(int n)
+{
+    assert((n>=0) && (n<12));
+    {
+        int s=0; 
+    for (int i = 0; i < n; i++)
+    {
+        s += i ; 
+    }
+
+    return s ;  
+    }
+}
+
+void intarray_debug(int *tab, int taille)
+{
+    printf("["); 
+    for (int  i = 0; i < taille; i++)
+    {
+        if(i== taille -1) 
+        {
+            printf("%d", tab[i]); 
+
+        }
+        else 
+        {
+            printf("%d ,", tab[i]);  
+        }
+        
+    }
+    printf("]"); 
+    
+}
 
 int main()
 {
-    int choixA ;
-    int choixB ; 
+    long int n = 100 ; 
 
-    printf("JourA tu jouez en tapant un nombre compris entre 1-3 : ");
-    scanf("%d", &choixA);  
-    
-    printf("JourA tu jouez en tapant un nombre compris entre 0-2 : ");
-    scanf("%d", &choixB);  
+    /* remplir un  tableau de 10 elts */
+   
+    int tableau[n] ;
 
-    if (choixA==2 &&  choixB == 1)
-    {
-        printf("Le jour A gagne le B"); 
+    // remplissage du tableau 
+
+    for (long int i =0; i <n; i++)
+    { 
+        tableau[i]= 2 *i + 4 ; 
     }
-    else if (choixA==0  && choixB== 2)
-    {
-        printf("Le jour A gagne le B");
-    }
-    else if  (choixB==2 &&  choixA == 1)
-    {
-        printf("Le jour B gagne le A"); 
-    }
-    else if (choixB==0  && choixA== 2)
-    {
-        printf("Le jour B gagne le A");
-    }
-    else if (choixB==1 && choixA==0)
-    {
-        printf("Le jour B ggne la partie");
-    }
-    
 
-    
-    
+    intarray_debug(tableau, n) ; 
 
-    /* si l'utilisateur prend 0-cailloux , 1-papier, 2-ciseaux */ 
+    return EXIT_SUCCESS; 
 
-
-    return 0; 
 }
